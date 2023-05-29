@@ -1,18 +1,21 @@
 'use client';
 
+import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
 import { useState } from 'react';
 
 const Page = () => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
 
-  const closeSidebar = () => {
-    setSidebarOpened(false);
-  };
+  const openSidebar = () => setSidebarOpened(true);
+
+  const closeSidebar = () => setSidebarOpened(false);
 
   const handlerClearConversations = () => {};
 
   const handleNewChat = () => {};
+
+  console.log(sidebarOpened);
 
   return (
     <main className='flex min-h-screen bg-gpt-gray '>
@@ -22,11 +25,15 @@ const Page = () => {
         onClear={handlerClearConversations}
         onNewChat={handleNewChat}
       >
-        <div>...</div>
+        <div className=''>...</div>
       </Sidebar>
 
       <section className='flex flex-col w-full'>
-        <button onClick={() => setSidebarOpened(true)}>Abir sidebar</button>
+        <Header
+          openSidebarClick={openSidebar}
+          title={`Bla bla bla`}
+          newChatClick={handleNewChat}
+        />
       </section>
     </main>
   );
