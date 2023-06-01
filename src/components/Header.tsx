@@ -7,9 +7,16 @@ type Props = {
   newChatClick: () => void;
 };
 
-export const Header = ({ title, openSidebarClick, newChatClick }: Props) => {
+export const Header = ({
+  title,
+  openSidebarClick,
+  newChatClick,
+}: Props) => {
   return (
-    <header className='flex justify-between items-center w-full border-b border-b-gray-600 p-2 md:hidden'>
+    <header
+      className='flex justify-between items-center w-full
+                  border-b border-b-gray-600 p-2 md:hidden'
+    >
       <div onClick={openSidebarClick}>
         <IconMenu width={24} height={24} />
       </div>
