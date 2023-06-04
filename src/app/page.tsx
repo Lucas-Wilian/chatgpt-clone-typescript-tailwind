@@ -1,6 +1,7 @@
 'use client';
 
 import { ChatArea } from '@/components/ChatArea';
+import { Footer } from '@/components/Footer';
 import { Header } from '@/components/Header';
 import { Sidebar } from '@/components/Sidebar';
 import { Chat } from '@/types/Chat';
@@ -29,6 +30,8 @@ const Page = () => {
 
   const handleNewChat = () => {};
 
+  const handleSendMessage = () => {};
+
   return (
     <main className='flex min-h-screen bg-gpt-gray '>
       <Sidebar
@@ -46,8 +49,8 @@ const Page = () => {
           title={`Bla bla bla`}
           newChatClick={handleNewChat}
         />
-
         <ChatArea chat={chatActive} />
+        <Footer onSendMessage={handleSendMessage} />
       </section>
     </main>
   );
