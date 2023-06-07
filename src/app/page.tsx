@@ -31,6 +31,7 @@ const Page = () => {
   const handleNewChat = () => {};
 
   const handleSendMessage = () => {};
+  const [AiLoading, setAiLoading] = useState(false);
 
   return (
     <main className='flex min-h-screen bg-gpt-gray '>
@@ -50,7 +51,10 @@ const Page = () => {
           newChatClick={handleNewChat}
         />
         <ChatArea chat={chatActive} />
-        <Footer onSendMessage={handleSendMessage} />
+        <Footer
+          onSendMessage={handleSendMessage}
+          disabled={AiLoading}
+        />
       </section>
     </main>
   );
